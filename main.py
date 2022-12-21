@@ -35,7 +35,7 @@ def is_bitlink(token, url):
 
 def main():
     load_dotenv()
-    bitly_token = os.getenv('bitly_token')
+    bitly_token = os.getenv('BITLY_TOKEN')
     parser = argparse.ArgumentParser(
         description=
         'Наша программа помогает посчитать кол-во кликов по ссылке. Для того чтобы получить кол-во кликов вставьте --url ссылка'
