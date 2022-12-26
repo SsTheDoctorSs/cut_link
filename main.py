@@ -1,7 +1,6 @@
 import os
 import argparse
 from urllib.parse import urlparse
-from dotenv import load_dotenv
 import requests
 from requests.exceptions import HTTPError
 
@@ -34,7 +33,7 @@ def is_bitlink(token, url):
 
 def main():
     load_dotenv()
-    bitly_token = os.getenv('BITLY_TOKEN')
+    bitly_token = os.environ['BITLY_TOKEN']
     parser = argparse.ArgumentParser(
         description=
         'Наша программа помогает посчитать кол-во кликов по ссылке. Для того чтобы получить кол-во кликов вставьте --url ссылка'
