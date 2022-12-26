@@ -1,12 +1,11 @@
 import os
-import requests
 import argparse
 from urllib.parse import urlparse
-from requests.exceptions import HTTPError
 from dotenv import load_dotenv
+import requests
+from requests.exceptions import HTTPError
 
 API_URL = 'https://api-ssl.bitly.com/v4/'
-
 
 def shorten_link(token, url):
     bitly_url = "{}shorten".format(API_URL)
