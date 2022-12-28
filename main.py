@@ -41,8 +41,8 @@ def main():
     )
     parser.add_argument('--url', help='Введите ссылку: ')
     args = parser.parse_args()
-    url_parse = urlparse(args.url)
-    url_without_protocol = f"{url_parse.netloc}{url_parse.path}"
+    parse_url = urlparse(args.url)
+    url_without_protocol = f"{parse_url.netloc}{parse_url.path}"
     if is_bitlink(bitly_token, url_without_protocol):
         try:
             print(count_clicks(bitly_token, url_without_protocol))
