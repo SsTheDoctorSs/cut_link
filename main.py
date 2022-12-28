@@ -4,6 +4,7 @@ from urllib.parse import urlparse
 import requests
 from requests.exceptions import HTTPError
 
+
 API_URL = 'https://api-ssl.bitly.com/v4/'
 
 def shorten_link(token, url):
