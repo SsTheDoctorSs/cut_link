@@ -7,6 +7,7 @@ from requests.exceptions import HTTPError
 
 API_URL = 'https://api-ssl.bitly.com/v4/'
 
+
 def shorten_link(token, url):
     bitly_url = "{}shorten".format(API_URL)
     params = {"long_url": url}
@@ -41,8 +42,8 @@ def main():
     )
     parser.add_argument('--url', help='Введите ссылку: ')
     args = parser.parse_args()
-    parse_url = urlparse(args.url)
-    url_without_protocol = f"{parse_url.netloc}{parse_url.path}"
+    parsed_url = urlparse(args.url)
+    url_without_protocol = f"{parsed_url.netloc}{parsed_url.path}"
     if is_bitlink(bitly_token, url_without_protocol):
         try:
             print(count_clicks(bitly_token, url_without_protocol))
